@@ -1,0 +1,19 @@
+body {
+  background-color: #eef1f5;
+}
+
+.a-shad {
+  box-shadow: 0 0 30px rgba(7, 51, 84, 0.17);
+}
+
+.nav-cus {
+  background-color: #4843d2;
+  color: white;
+}
+
+.i-content {
+  background-color: white;
+  box-shadow: 0 0 30px rgba(7, 51, 84, 0.17);
+  padding: 25px;
+}
+
