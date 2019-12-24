@@ -3,7 +3,11 @@ import Header from './layout/Header';
 import Api from './api/Api';
 import '../App.css';
 
+
+
 class App extends React.Component {
+    intervalId;
+
     constructor(props) {
         super(props);
 
@@ -13,22 +17,40 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        Api.get('https://jsonplaceholder.typicode.com/users')
+        this.fetchData();
+    }
+
+    componentWillMount() {
+        clearTimeout(this.intervalId);
+    }
+
+    fetchData = () => {
+        Api.get('http://dummy.restapiexample.com/api/v1/employees')
         .then(response => {
             const row = response.data;
             this.setState({ row });
+
+            this.intervalId = setTimeout(this.fetchData.bind(this), 5000);
         });
     }
+
+   
+
     render() {
+
+        const st = {
+            display: 'flex',
+            flexDirection: 'column-reverse'
+        }
         return(
             <div className="container mt-5">
                 <Header />
                 <div className="i-content">
                     <h4>Get API</h4>
-                    <ul>
-                        {/* { this.state.row.map(row => <li>{ row.name }</li>) } */}
-                        { this.state.row.map((row, i) => <li key={i}>{ row.name }</li>) }
-                    </ul>
+                    <div style={st}>
+                        { this.state.row.map((row, i) => <div style={st} key={i}>{ row.employee_name }</div>) }
+                    </div>
+                    
                 </div>
             </div>
         );
