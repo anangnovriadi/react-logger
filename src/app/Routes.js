@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './App';
-import Post from './post/Post';
-import Delete from './delete/Delete';
+import BtnQris from './BtnQris';
+import BtnMerchant from './BtnMerchant';
 
 class Routes extends React.Component {
     render() {
@@ -10,8 +10,8 @@ class Routes extends React.Component {
             <Router>
                 <div>
                     <Route exact path="/" component={App} />
-                    <Route path="/post" component={Post} />
-                    <Route path="/delete" component={Delete} />
+                    <Route path="/btn-qris" component={BtnQris} />
+                    <Route path="/btn-merchant" component={BtnMerchant} />
                 </div>
             </Router>
         );

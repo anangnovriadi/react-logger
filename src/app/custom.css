@@ -1,0 +1,35 @@
+body {
+    font-family: 'Nobile', sans-serif;
+    color: rgb(23, 23, 23);
+}
+
+.container-cus {
+    margin-top: 92px;
+}
+
+.bg-white {
+    background: white;
+}
+
+.nav-custom {
+    padding-left: 78px;
+    padding-right: 78px;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.nav-color {
+    color: rgb(23, 23, 23);
+}
+
+h5 svg, h6 svg {
+    padding-top: 5px;
+}
+
+.footer-cus {
+    background: #f2f5fa;
+    margin-top: 35px;
+    border-top: 1px solid white;
+}

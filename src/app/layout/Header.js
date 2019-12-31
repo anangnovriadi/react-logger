@@ -2,15 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return(
             <div>
-                <nav aria-label="breadcrumb" className="a-shad">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item active" aria-current="page"><Link to="/"><b>App with Axios</b></Link></li>
-                        <li className="breadcrumb-item active" aria-current="page"><Link to="/post">Post</Link></li>
-                        <li className="breadcrumb-item active" aria-current="page"><Link to="/delete">Delete</Link></li>
-                    </ol>
+                <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-white a-shad nav-custom">
+                    <a className="navbar-brand" href="#">Logger</a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                            <li className={window.location.pathname == '/btn-merchant' ? "nav-item active" : "nav-item"}>
+                                <Link to="/btn-merchant" className="nav-link nav-color">BTN Merchant</Link>
+                            </li>
+                            <li className={window.location.pathname == '/btn-qris' ? "nav-item active" : "nav-item"}>
+                                <Link to="/btn-qris" className="nav-link nav-color">BTN QRIS</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         );
