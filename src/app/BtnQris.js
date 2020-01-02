@@ -44,7 +44,7 @@ class BtnQris extends React.Component {
                 <Header />
                 <div className="container container-cus">
                     {this.state.row.map((e, i) => 
-                        <div class="card a-shad mt-4 mb-4">
+                        <div class="card card-cus a-shad mt-4 mb-4">
                             <div class="card-body">
                                 <h5 class="card-title"><IoIosApps /> Module # QRIS</h5>
                                 <h6 class="card-title"><IoIosGlobe /> Endpoint [][][][][][] {e.endpoint}</h6>
