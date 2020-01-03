@@ -29,7 +29,7 @@ class BtnQris extends React.Component {
 
     fetchData = () => {
         Api.post('http://localhost:3001/logger/list/endpoint', {
-            "endpoint": ["/qrCode/generate", "/bank"]
+            "endpoint": ["/qrCode/generate", "/qrCode/read", "/bank"]
         })
         .then(response => {
             const row = response.data.data.rows;
