@@ -1,13 +1,10 @@
 import React from 'react';
 import Header from './layout/Header';
-import Api from './api/Api';
+import Footer from './layout/Footer';
 import '../App.css';
-
-
+import img from './kucing.jpg';
 
 class App extends React.Component {
-    intervalId;
-
     constructor(props) {
         super(props);
 
@@ -16,42 +13,15 @@ class App extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.fetchData();
-    }
-
-    componentWillMount() {
-        clearTimeout(this.intervalId);
-    }
-
-    fetchData = () => {
-        Api.get('http://dummy.restapiexample.com/api/v1/employees')
-        .then(response => {
-            const row = response.data;
-            this.setState({ row });
-
-            this.intervalId = setTimeout(this.fetchData.bind(this), 5000);
-        });
-    }
-
-   
-
     render() {
-
-        const st = {
-            display: 'flex',
-            flexDirection: 'column-reverse'
-        }
+        console.log(img)
         return(
-            <div className="container mt-5">
+            <div className="">
                 <Header />
-                <div className="i-content">
-                    <h4>Get API</h4>
-                    <div style={st}>
-                        { this.state.row.map((row, i) => <div style={st} key={i}>{ row.employee_name }</div>) }
-                    </div>
-                    
+                <div>
+                    <img className="img-full" src={img} />
                 </div>
+                <Footer />
             </div>
         );
     }

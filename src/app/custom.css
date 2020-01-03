@@ -44,3 +44,19 @@ h5 svg, h6 svg {
     margin-top: 35px;
     border-top: 1px solid white;
 }
+
+.border-r {
+    border-left: 4px solid #ef6df3;
+}
+
+.img-full {
+    width: 100%;
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
