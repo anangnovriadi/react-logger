@@ -7,7 +7,7 @@ import ReactJson from 'react-json-view';
 import { IoIosApps, IoIosGlobe, IoIosTime } from "react-icons/io";
 import Api from './api/Api';
 import momentjs from 'moment'; 
-momentjs.locale();
+momentjs.locale('id');
 
 class BtnMerchant extends React.Component {
     intervalId;
@@ -44,16 +44,15 @@ class BtnMerchant extends React.Component {
                 <Header />
                 <div className="container container-cus">
                     {this.state.row.map((e, i) =>
-                        <div className={momentjs(momentjs(e.date).format('YYYY-MM-DD') + ' ' + momentjs(e.time, 'HH:mm:ss').format('hh:mm:ss')).fromNow() == 'a few seconds ago' ? 'card card-cus a-shad mt-4 mb-4 border-r' : 'card card-cus a-shad mt-4 mb-4'}>
+                        <div className={momentjs(momentjs(e.date).format('YYYY-MM-DD') + ' ' + momentjs(e.time, 'HH:mm:ss').format('HH:mm:ss')).fromNow() == 'a few seconds ago' ? 'card card-cus a-shad mt-4 mb-4 border-r' : 'card card-cus a-shad mt-4 mb-4'}>
                             <div className="card-body">
                                 <div className="row">
-                                    {console.log()}
                                     <div className="col-md-6">
                                         <h5 class="card-title"><IoIosApps /> Module # QRIS + Merchant</h5>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="text-right">
-                                            <h5 style={{fontSize: '10px'}} class="card-title"><IoIosTime /> {momentjs(momentjs(e.date).format('YYYY-MM-DD') + ' ' + momentjs(e.time, 'HH:mm:ss').format('hh:mm:ss')).fromNow()}</h5>
+                                            <h5 style={{fontSize: '10px'}} class="card-title"><IoIosTime /> {momentjs(momentjs(e.date).format('YYYY-MM-DD') + ' ' + momentjs(e.time, 'HH:mm:ss').format('HH:mm:ss')).fromNow()}</h5>
                                         </div>
                                     </div>
                                 </div>
