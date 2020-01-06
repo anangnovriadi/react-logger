@@ -29,7 +29,7 @@ class BtnMerchant extends React.Component {
     }
 
     fetchData = () => {
-        Api.get('http://localhost:3001/logger/list')
+        Api.get('http://192.168.172.39:3002/logger/list')
         .then(response => {
             const row = response.data.data.rows;
             this.setState({ row });

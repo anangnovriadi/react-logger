@@ -28,7 +28,7 @@ class BtnQris extends React.Component {
     }
 
     fetchData = () => {
-        Api.post('http://localhost:3001/logger/list/endpoint', {
+        Api.post('http://192.168.172.39:3002/logger/list/endpoint', {
             "endpoint": ["/qrCode/generate", "/qrCode/read", "/bank"]
         })
         .then(response => {

@@ -21,7 +21,7 @@ class App extends React.Component {
                 <div>
                     <img className="img-full" src={img} />
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         );
     }
