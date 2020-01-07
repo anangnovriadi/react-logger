@@ -58,7 +58,6 @@ class BtnMerchant extends React.Component {
                                     </div>
                                 </div>
                                 <h6 class="card-title"><IoIosGlobe /> Endpoint [][][][][][] {e.endpoint} <Link to={"/detail/" + e._id}><IoMdEye /></Link></h6>
-                                {/* <p className="mye"><IoMdEye /></p> */}
                                 <p class="card-text">
                                     <ReactJson src={e} theme="hopscotch" collapsed={true} />
                                 </p>

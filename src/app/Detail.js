@@ -45,7 +45,7 @@ class Detail extends React.Component {
             <div>
                 <Header />
                 <div className="container container-cus">
-                    <div className={momentjs(momentjs(this.state.row.date).format('YYYY-MM-DD') + ' ' + momentjs(this.state.row.time, 'HH:mm:ss').format('HH:mm:ss')).fromNow() == 'a few seconds ago' ? 'card card-cus a-shad mt-4 mb-4 border-r' : 'card card-cus a-shad mt-4 mb-4'}>
+                    <div className={momentjs(momentjs(this.state.row.date).format('YYYY-MM-DD') + ' ' + momentjs(this.state.row.time, 'HH:mm:ss').format('HH:mm:ss')).fromNow() == 'a few seconds ago' ? 'card a-shad mt-4 mb-4 border-r' : 'card a-shad mt-4 mb-4'}>
                         <div className="card-body">
                             <div className="row">
                                 <div className="col-md-6">
