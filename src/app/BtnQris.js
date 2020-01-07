@@ -4,9 +4,10 @@ import Footer from './layout/Footer';
 import '../App.css';
 import './custom.css';
 import ReactJson from 'react-json-view';
-import { IoIosApps, IoIosGlobe, IoIosTime } from "react-icons/io";
+import { IoIosApps, IoIosGlobe, IoIosTime, IoMdEye } from "react-icons/io";
 import Api from './api/Api';
 import momentjs from 'moment'; 
+import { Link } from 'react-router-dom';
 momentjs.locale()
 
 class BtnQris extends React.Component {
@@ -62,7 +63,7 @@ class BtnQris extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <h6 class="card-title"><IoIosGlobe /> Endpoint [][][][][][] {e.endpoint}</h6>
+                                <h6 class="card-title"><IoIosGlobe /> Endpoint [][][][][][] {e.endpoint} <Link to={"/detail/" + e._id}><IoMdEye /></Link></h6>
                                 <p class="card-text">
                                     <ReactJson src={e} theme="hopscotch" collapsed={true} />
                                 </p>

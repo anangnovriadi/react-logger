@@ -61,3 +61,10 @@ h5 svg, h6 svg {
     min-width: 50%;
     min-height: 50%;
 }
+
+.mye svg {
+    position: absolute;
+    right: -14px;
+    top: -8px;
+    font-size: 30px;
+}
