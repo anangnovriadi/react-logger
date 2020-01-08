@@ -4,10 +4,9 @@ import Footer from './layout/Footer';
 import '../App.css';
 import './custom.css';
 import ReactJson from 'react-json-view';
-import { IoIosApps, IoIosGlobe, IoIosTime, IoMdEye } from "react-icons/io";
+import { IoIosApps, IoIosGlobe, IoIosTime } from "react-icons/io";
 import Api from './api/Api';
 import momentjs from 'moment'; 
-import { Link } from 'react-router-dom';
 momentjs.locale('id');
 
 class Detail extends React.Component {
@@ -45,7 +44,7 @@ class Detail extends React.Component {
             <div>
                 <Header />
                 <div className="container container-cus">
-                    <div className={momentjs(momentjs(this.state.row.date).format('YYYY-MM-DD') + ' ' + momentjs(this.state.row.time, 'HH:mm:ss').format('HH:mm:ss')).fromNow() == 'a few seconds ago' ? 'card a-shad mt-4 mb-4 border-r' : 'card a-shad mt-4 mb-4'}>
+                    <div className={momentjs(momentjs(this.state.row.date).format('YYYY-MM-DD') + ' ' + momentjs(this.state.row.time, 'HH:mm:ss').format('HH:mm:ss')).fromNow() === 'a few seconds ago' ? 'card a-shad mt-4 mb-4 border-r' : 'card a-shad mt-4 mb-4'}>
                         <div className="card-body">
                             <div className="row">
                                 <div className="col-md-6">

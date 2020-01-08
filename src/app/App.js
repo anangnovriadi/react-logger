@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './layout/Header';
-import Footer from './layout/Footer';
 import '../App.css';
 import img from './kucing.jpg';
 
@@ -14,14 +13,12 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(img)
         return(
             <div className="">
                 <Header />
                 <div>
-                    <img className="img-full" src={img} />
+                    <img className="img-full" src={img} alt="" />
                 </div>
-                {/* <Footer /> */}
             </div>
         );
     }

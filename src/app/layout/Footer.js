@@ -4,9 +4,9 @@ class Footer extends React.Component {
     render() {
         return(
             <div>
-                <footer class="page-footer font-small footer-cus blue">
-                    <div class="footer-copyright text-center py-3">© Powered by:
-                        <a href="https://github.com/anangnovriadi"> Nang Ning</a>
+                <footer className="page-footer font-small footer-cus blue">
+                    <div className="footer-copyright text-center py-3">© Powered by:
+                        <a href="http://www.nangning.xyz/"> Nang Ning</a>
                     </div>
                 </footer>
             </div>
