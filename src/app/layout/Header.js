@@ -16,6 +16,9 @@ class Header extends React.Component {
                             <li className={window.location.pathname === '/btn-merchant' ? "nav-item active" : "nav-item"}>
                                 <Link to="/btn-merchant" className="nav-link nav-color">BTN Merchant</Link>
                             </li>
+                            <li className={window.location.pathname === '/btn-pay' ? "nav-item active" : "nav-item"}>
+                                <Link to="/btn-pay" className="nav-link nav-color">BTN Pay</Link>
+                            </li>
                             <li className={window.location.pathname === '/btn-qris' ? "nav-item active" : "nav-item"}>
                                 <Link to="/btn-qris" className="nav-link nav-color">BTN QRIS</Link>
                             </li>
