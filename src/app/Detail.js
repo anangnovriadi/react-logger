@@ -5,7 +5,7 @@ import '../App.css';
 import './custom.css';
 import ReactJson from 'react-json-view';
 import { IoIosApps, IoIosGlobe, IoIosTime } from "react-icons/io";
-import Api from './api/Api';
+import axios from 'axios';
 import momentjs from 'moment'; 
 momentjs.locale('id');
 
@@ -30,7 +30,7 @@ class Detail extends React.Component {
 
     fetchData = () => {
         let params = this.props.match.params.id;
-        Api.get('http://192.168.172.39:3002/logger/list/' + params)
+        axios.get('http://192.168.172.39:3002/logger/list/' + params)
         .then(response => {
             const row = response.data.data;
             this.setState({ row });

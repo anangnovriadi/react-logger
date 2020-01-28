@@ -5,10 +5,18 @@ import '../App.css';
 import './custom.css';
 import ReactJson from 'react-json-view';
 import { IoIosApps, IoIosGlobe, IoIosTime, IoMdEye } from "react-icons/io";
-import Api from './api/Api';
 import momentjs from 'moment'; 
+import { HashLoader } from "react-spinners";
+import { css } from "@emotion/core";
 import { Link } from 'react-router-dom';
-momentjs.locale()
+import axios from 'axios';
+momentjs.locale();
+
+const override = css`
+  display: block;
+  margin: 255px auto;
+  border-color: red;
+`;
 
 class BtnQris extends React.Component {
     intervalId;
@@ -17,12 +25,15 @@ class BtnQris extends React.Component {
         super(props);
 
         this.state = {
-            row: []
+            row: [],
+            loading: true
         }
     }
 
     componentDidMount() {
-        this.fetchData();
+        this.setState({ loading: true }, () => {
+            this.fetchData();
+        })
     }
 
     componentWillMount() {
@@ -30,7 +41,7 @@ class BtnQris extends React.Component {
     }
 
     fetchData = () => {
-        Api.post('http://192.168.172.39:3002/logger/list/endpoint', {
+        axios.post('http://192.168.172.39:3002/logger/list/endpoint', {
             "endpoint": [
                 "/qrCode/generate", "/qrCode/read", "/bank", "/bank/inquiry",
                 "/merchantAcquirer", "/merchantAcquirer/update", "/merchantAcquirer/delete",
@@ -39,7 +50,10 @@ class BtnQris extends React.Component {
         })
         .then(response => {
             const row = response.data.data.rows;
-            this.setState({ row });
+            this.setState({ 
+                row: row,
+                loading: false 
+            });
 
             this.intervalId = setTimeout(this.fetchData.bind(this), 5000);
         });
@@ -50,7 +64,13 @@ class BtnQris extends React.Component {
             <div>
                 <Header />
                 <div className="container container-cus">
-                    {this.state.row.map((e, i) => 
+                    {this.state.loading ? 
+                    <HashLoader
+                        css={override}
+                        size={55}
+                        color={"#86e7d4"}
+                    /> :
+                    this.state.row.map((e, i) => 
                         <div key={i} className={momentjs(momentjs(e.date).format('YYYY-MM-DD') + ' ' + momentjs(e.time, 'HH:mm:ss').format('HH:mm:ss')).fromNow() === 'a few seconds ago' ? 'card card-cus a-shad mt-4 mb-4 border-r' : 'card card-cus a-shad mt-4 mb-4'}>
                             <div className="card-body">
                                 <div className="row">
