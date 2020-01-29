@@ -75,7 +75,7 @@ class BtnQris extends React.Component {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-6">
-                                        <h5 className="card-title"><IoIosApps /> Module # QRIS + Merchant</h5>
+                                        <h5 className="card-title"><IoIosApps /> Module # QRIS</h5>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="text-right">
