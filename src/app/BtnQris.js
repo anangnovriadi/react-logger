@@ -45,7 +45,8 @@ class BtnQris extends React.Component {
             "endpoint": [
                 "/qrCode/generate", "/qrCode/read", "/bank", "/bank/inquiry",
                 "/merchantAcquirer", "/merchantAcquirer/update", "/merchantAcquirer/delete",
-                "/merchantAcquirer/add", "/merchantCategory", "/merchantCriteria"
+                "/merchantAcquirer/add", "/merchantCategory", "/merchantCriteria",
+                "/payment/flag"
             ]
         })
         .then(response => {
